@@ -59,7 +59,7 @@ const en = {
     from: 'From', to: 'To', service: 'Service', message: 'Message (optional)', guest: 'Guest name', onBehalf: 'Booking on behalf of a guest',
     serviceOpts: ['Self-drive', 'With chauffeur', 'Airport transfer', 'Event', 'Production / shoot', 'Not sure yet'],
     submit: 'Send request', required: 'Please fill in the required fields.', dates: 'The end date must be after the start date.',
-    okTitle: 'Request prepared', okText: 'Prototype: nothing has been sent. In production this request goes to the REV8 booking system and the team replies by email or message.',
+    okTitle: 'Request sent', okText: 'Thank you! We have received your request and will reply by email or message as soon as possible.',
     ref: 'Reference', partnerRef: 'Partner referral', again: 'New request', close: 'Close',
   },
 };
@@ -124,7 +124,7 @@ const es: Dict = {
     from: 'Desde', to: 'Hasta', service: 'Servicio', message: 'Mensaje (opcional)', guest: 'Nombre del cliente', onBehalf: 'Reserva en nombre de un cliente',
     serviceOpts: ['Sin conductor', 'Con chófer', 'Traslado aeropuerto', 'Evento', 'Producción / rodaje', 'Aún no lo sé'],
     submit: 'Enviar solicitud', required: 'Rellena los campos obligatorios.', dates: 'La fecha final debe ser posterior a la inicial.',
-    okTitle: 'Solicitud preparada', okText: 'Prototipo: no se ha enviado nada. En producción esta solicitud llega al sistema de reservas de REV8 y el equipo responde por email o mensaje.',
+    okTitle: 'Solicitud enviada', okText: '¡Gracias! Hemos recibido tu solicitud y te responderemos por email o mensaje lo antes posible.',
     ref: 'Referencia', partnerRef: 'Referencia de socio', again: 'Nueva solicitud', close: 'Cerrar',
   },
 };
@@ -188,7 +188,7 @@ const zh: Dict = {
     from: '开始日期', to: '结束日期', service: '服务', message: '留言（可选）', guest: '客人姓名', onBehalf: '代客人预订',
     serviceOpts: ['自驾', '配司机', '机场接送', '活动', '拍摄 / 制作', '还不确定'],
     submit: '发送请求', required: '请填写必填项。', dates: '结束日期必须晚于开始日期。',
-    okTitle: '请求已准备好', okText: '原型说明：未发送任何内容。正式上线后，此请求将进入 REV8 预订系统，团队会通过邮件或消息回复。',
+    okTitle: '请求已发送', okText: '谢谢！我们已收到您的请求，会尽快通过邮件或消息回复您。',
     ref: '编号', partnerRef: '合作伙伴推荐码', again: '新的请求', close: '关闭',
   },
 };
@@ -252,7 +252,7 @@ const ru: Dict = {
     from: 'С', to: 'По', service: 'Услуга', message: 'Сообщение (необязательно)', guest: 'Имя гостя', onBehalf: 'Бронирование от имени гостя',
     serviceOpts: ['Без водителя', 'С водителем', 'Трансфер из аэропорта', 'Мероприятие', 'Съёмки / производство', 'Пока не знаю'],
     submit: 'Отправить запрос', required: 'Заполните обязательные поля.', dates: 'Дата окончания должна быть позже даты начала.',
-    okTitle: 'Запрос подготовлен', okText: 'Прототип: ничего не отправлено. В рабочей версии запрос поступит в систему бронирования REV8, а команда ответит по почте или в мессенджере.',
+    okTitle: 'Запрос отправлен', okText: 'Спасибо! Мы получили вашу заявку и ответим по почте или в мессенджере как можно скорее.',
     ref: 'Номер', partnerRef: 'Рекомендация партнёра', again: 'Новый запрос', close: 'Закрыть',
   },
 };
@@ -315,7 +315,7 @@ const ar: Dict = {
     from: 'من', to: 'إلى', service: 'الخدمة', message: 'رسالة (اختياري)', guest: 'اسم الضيف', onBehalf: 'حجز نيابةً عن ضيف',
     serviceOpts: ['قيادة ذاتية', 'مع سائق', 'توصيل من المطار', 'مناسبة', 'تصوير / إنتاج', 'لست متأكداً بعد'],
     submit: 'إرسال الطلب', required: 'يرجى تعبئة الحقول المطلوبة.', dates: 'يجب أن يكون تاريخ الانتهاء بعد تاريخ البداية.',
-    okTitle: 'تم تجهيز الطلب', okText: 'نموذج أولي: لم يُرسل أي شيء. عند الإطلاق سيصل الطلب إلى نظام حجوزات REV8 وسيرد الفريق عبر البريد أو الرسائل.',
+    okTitle: 'تم إرسال الطلب', okText: 'شكراً لك! استلمنا طلبك وسنرد عليك عبر البريد أو الرسائل في أقرب وقت.',
     ref: 'المرجع', partnerRef: 'إحالة شريك', again: 'طلب جديد', close: 'إغلاق',
   },
 };

@@ -31,7 +31,7 @@ const T = {
     all: 'All', from: 'From', perDay: '/ day', onRequest: 'Price on request',
     ctaTitle: 'Ready to offer REV8 to your guests?', ctaText: 'Enter the partner area to see your net prices and commission, or ask us for a meeting.',
     meet: 'Request a meeting',
-    form: { title: 'Request a meeting', hotel: 'Hotel', name: 'Your name', contact: 'Email / WeChat / phone', msg: 'Message (optional)', send: 'Send', req: 'Please fill in hotel, name and contact.', ok: 'Request prepared', okText: 'Prototype: nothing has been sent. In production this goes to the REV8 team.', close: 'Close' },
+    form: { title: 'Request a meeting', hotel: 'Hotel', name: 'Your name', contact: 'Email / WeChat / phone', msg: 'Message (optional)', send: 'Send', req: 'Please fill in hotel, name and contact.', ok: 'Request sent', okText: 'Thank you! We have received your request and will reply by email or message as soon as possible.', close: 'Close' },
     locked: 'Prototype: open for now, it will require login.',
   },
   es: {
@@ -52,7 +52,7 @@ const T = {
     all: 'Todos', from: 'Desde', perDay: '/ día', onRequest: 'Precio a consultar',
     ctaTitle: '¿Listo para ofrecer REV8 a tus huéspedes?', ctaText: 'Entra en el área de socios para ver tus precios netos y tu comisión, o pídenos una reunión.',
     meet: 'Pedir una reunión',
-    form: { title: 'Pedir una reunión', hotel: 'Hotel', name: 'Tu nombre', contact: 'Email / WeChat / teléfono', msg: 'Mensaje (opcional)', send: 'Enviar', req: 'Rellena hotel, nombre y contacto.', ok: 'Solicitud preparada', okText: 'Prototipo: no se ha enviado nada. En producción esto le llega al equipo de REV8.', close: 'Cerrar' },
+    form: { title: 'Pedir una reunión', hotel: 'Hotel', name: 'Tu nombre', contact: 'Email / WeChat / teléfono', msg: 'Mensaje (opcional)', send: 'Enviar', req: 'Rellena hotel, nombre y contacto.', ok: 'Solicitud enviada', okText: '¡Gracias! Hemos recibido tu solicitud y te responderemos por email o mensaje lo antes posible.', close: 'Cerrar' },
     locked: 'Prototipo: de momento abierta, más adelante pedirá contraseña.',
   },
   zh: {
@@ -73,7 +73,7 @@ const T = {
     all: '全部', from: '起', perDay: '/ 天', onRequest: '价格面议',
     ctaTitle: '准备好为您的客人提供 REV8 了吗？', ctaText: '进入合作伙伴专区查看您的净价和佣金，或与我们预约会面。',
     meet: '预约会面',
-    form: { title: '预约会面', hotel: '酒店', name: '您的姓名', contact: '邮箱 / 微信 / 电话', msg: '留言（可选）', send: '发送', req: '请填写酒店、姓名和联系方式。', ok: '请求已准备好', okText: '原型说明：未发送任何内容。正式上线后，此请求将发送给 REV8 团队。', close: '关闭' },
+    form: { title: '预约会面', hotel: '酒店', name: '您的姓名', contact: '邮箱 / 微信 / 电话', msg: '留言（可选）', send: '发送', req: '请填写酒店、姓名和联系方式。', ok: '请求已发送', okText: '谢谢！我们已收到您的请求，会尽快通过邮件或消息回复您。', close: '关闭' },
     locked: '原型说明：目前开放，之后将需要登录。',
   },
   ru: {
@@ -94,7 +94,7 @@ const T = {
     all: 'Все', from: 'От', perDay: '/ сутки', onRequest: 'Цена по запросу',
     ctaTitle: 'Готовы предложить REV8 своим гостям?', ctaText: 'Войдите в кабинет партнёра, чтобы увидеть нетто-цены и комиссию, или запросите встречу.',
     meet: 'Запросить встречу',
-    form: { title: 'Запросить встречу', hotel: 'Отель', name: 'Ваше имя', contact: 'Почта / WeChat / телефон', msg: 'Сообщение (необязательно)', send: 'Отправить', req: 'Укажите отель, имя и контакт.', ok: 'Запрос подготовлен', okText: 'Прототип: ничего не отправлено. В рабочей версии запрос поступит команде REV8.', close: 'Закрыть' },
+    form: { title: 'Запросить встречу', hotel: 'Отель', name: 'Ваше имя', contact: 'Почта / WeChat / телефон', msg: 'Сообщение (необязательно)', send: 'Отправить', req: 'Укажите отель, имя и контакт.', ok: 'Запрос отправлен', okText: 'Спасибо! Мы получили вашу заявку и ответим по почте или в мессенджере как можно скорее.', close: 'Закрыть' },
     locked: 'Прототип: пока открыт, позже потребуется вход.',
   },
   ar: {
@@ -115,7 +115,7 @@ const T = {
     all: 'الكل', from: 'من', perDay: '/ يوم', onRequest: 'السعر عند الطلب',
     ctaTitle: 'هل أنت مستعد لتقديم REV8 لضيوفك؟', ctaText: 'ادخل إلى منطقة الشركاء لترى أسعارك الصافية وعمولتك، أو اطلب منا اجتماعاً.',
     meet: 'اطلب اجتماعاً',
-    form: { title: 'اطلب اجتماعاً', hotel: 'الفندق', name: 'اسمك', contact: 'البريد / WeChat / الهاتف', msg: 'رسالة (اختياري)', send: 'إرسال', req: 'يرجى إدخال الفندق والاسم وطريقة التواصل.', ok: 'تم تجهيز الطلب', okText: 'نموذج أولي: لم يُرسل أي شيء. عند الإطلاق سيصل الطلب إلى فريق REV8.', close: 'إغلاق' },
+    form: { title: 'اطلب اجتماعاً', hotel: 'الفندق', name: 'اسمك', contact: 'البريد / WeChat / الهاتف', msg: 'رسالة (اختياري)', send: 'إرسال', req: 'يرجى إدخال الفندق والاسم وطريقة التواصل.', ok: 'تم إرسال الطلب', okText: 'شكراً لك! استلمنا طلبك وسنرد عليك عبر البريد أو الرسائل في أقرب وقت.', close: 'إغلاق' },
     locked: 'نموذج أولي: مفتوح حالياً، وسيتطلب لاحقاً تسجيل الدخول.',
   },
 };

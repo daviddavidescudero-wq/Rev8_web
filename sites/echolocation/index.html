@@ -326,6 +326,7 @@ footer{border-top:1px solid var(--line2);margin-top:0}
       <h3 data-k="mTitle"></h3>
       <p style="color:#a9b0bc;margin:0" data-k="mSub"></p>
       <form id="planForm" novalidate>
+        <input name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0">
         <div class="fg">
           <label class="w"><span data-k="mName"></span> *<input name="name" autocomplete="name"></label>
           <label><span data-k="mEmail"></span> *<input name="email" type="email" autocomplete="email"></label>
@@ -376,7 +377,7 @@ const D = {
   about:'Bespoke luxury journeys across China, from a local team in Shanghai.',fNav:'Navigation',fContact:'Contact',fCity:'Shanghai, China',
   mTitle:'Plan your trip',mSub:'Tell us what you have in mind and we will send you a proposal.',mName:'Full name',mEmail:'Email',mPhone:'Phone / WeChat / WhatsApp',
   mInterest:'I am interested in',mFrom:'Arrival date',mPeople:'Travellers',mMsg:'Your idea (optional)',mSend:'Send request',
-  mNote:'Prototype: submission is simulated.',req:'Please enter your name and email.',okTitle:'Request prepared',okText:'Prototype: nothing has been sent. In production this request goes to the Echolocation team.',close:'Close',
+  mNote:'',req:'Please enter your name and email.',okTitle:'Request sent',okText:'Thank you! We have received your request and will reply by email or message as soon as possible.',close:'Close',
   opt_general:'Not sure yet — advise me',opt_proposal:'Private / corporate services',opt_cars:'Luxury car with REV8'},
  es:{cHead:'Habla con nosotros directamente',cWa:'WhatsApp',cWc:'WeChat',cEm:'Email',cCopy:'Copiar',cCopied:'Copiado',cPend:'Email de ejemplo, pendiente de cambiar',nHome:'Inicio',nPackages:'Paquetes de viaje',nExp:'Experiencias',nRev8:'REV8 Cars',nBiz:'Empresas',nAbout:'Sobre nosotros',plan:'Planifica tu viaje',
   heroTitle:'Tu experiencia completa en <em>China</em>',heroSub:'Paquetes de viaje todo incluido, con experiencias premium, movilidad de lujo, alojamiento exclusivo y asistencia personalizada.',
@@ -397,7 +398,7 @@ const D = {
   about:'Viajes de lujo a medida por China, con un equipo local en Shanghái.',fNav:'Navegación',fContact:'Contacto',fCity:'Shanghái, China',
   mTitle:'Planifica tu viaje',mSub:'Cuéntanos qué tienes en mente y te enviaremos una propuesta.',mName:'Nombre completo',mEmail:'Email',mPhone:'Teléfono / WeChat / WhatsApp',
   mInterest:'Me interesa',mFrom:'Fecha de llegada',mPeople:'Viajeros',mMsg:'Tu idea (opcional)',mSend:'Enviar solicitud',
-  mNote:'Prototipo: el envío está simulado.',req:'Indica tu nombre y tu email.',okTitle:'Solicitud preparada',okText:'Prototipo: no se ha enviado nada. En producción esta solicitud le llega al equipo de Echolocation.',close:'Cerrar',
+  mNote:'',req:'Indica tu nombre y tu email.',okTitle:'Solicitud enviada',okText:'¡Gracias! Hemos recibido tu solicitud y te responderemos por email o mensaje lo antes posible.',close:'Cerrar',
   opt_general:'Aún no lo sé — aconsejadme',opt_proposal:'Servicios privados / empresa',opt_cars:'Coche de lujo con REV8'},
  zh:{cHead:'直接联系我们',cWa:'WhatsApp',cWc:'微信',cEm:'邮箱',cCopy:'复制',cCopied:'已复制',cPend:'示例邮箱，待更换',nHome:'首页',nPackages:'旅行套餐',nExp:'体验',nRev8:'REV8 Cars',nBiz:'企业服务',nAbout:'关于我们',plan:'规划您的旅程',
   heroTitle:'您的完整<em>中国</em>体验',heroSub:'全包式旅行套餐：尊享体验、豪华出行、精选住宿与专属贴心服务。',
@@ -418,7 +419,7 @@ const D = {
   about:'中国境内的定制奢华旅程，由上海本地团队为您服务。',fNav:'导航',fContact:'联系方式',fCity:'中国 · 上海',
   mTitle:'规划您的旅程',mSub:'告诉我们您的想法，我们将为您发送方案。',mName:'姓名',mEmail:'邮箱',mPhone:'电话 / 微信 / WhatsApp',
   mInterest:'我感兴趣的是',mFrom:'抵达日期',mPeople:'出行人数',mMsg:'您的想法（可选）',mSend:'发送请求',
-  mNote:'原型说明：提交为模拟操作。',req:'请填写您的姓名和邮箱。',okTitle:'请求已准备好',okText:'原型说明：未发送任何内容。正式上线后，此请求将发送给 Echolocation 团队。',close:'关闭',
+  mNote:'',req:'请填写您的姓名和邮箱。',okTitle:'请求已发送',okText:'谢谢！我们已收到您的请求，会尽快通过邮件或消息回复您。',close:'关闭',
   opt_general:'还不确定——请给我建议',opt_proposal:'私人 / 企业服务',opt_cars:'REV8 豪华座驾'},
  ru:{cHead:'Свяжитесь с нами напрямую',cWa:'WhatsApp',cWc:'WeChat',cEm:'Эл. почта',cCopy:'Копировать',cCopied:'Скопировано',cPend:'Пример адреса, будет заменён',nHome:'Главная',nPackages:'Туристические пакеты',nExp:'Впечатления',nRev8:'REV8 Cars',nBiz:'Для бизнеса',nAbout:'О нас',plan:'Спланировать поездку',
   heroTitle:'Ваш полный опыт <em>Китая</em>',heroSub:'Пакеты «всё включено» с премиальными впечатлениями, роскошной мобильностью, эксклюзивным проживанием и персональным сопровождением.',
@@ -439,7 +440,7 @@ const D = {
   about:'Индивидуальные роскошные путешествия по Китаю от местной команды в Шанхае.',fNav:'Навигация',fContact:'Контакты',fCity:'Шанхай, Китай',
   mTitle:'Спланировать поездку',mSub:'Расскажите, что вы задумали, и мы пришлём предложение.',mName:'Полное имя',mEmail:'Эл. почта',mPhone:'Телефон / WeChat / WhatsApp',
   mInterest:'Меня интересует',mFrom:'Дата прибытия',mPeople:'Путешественников',mMsg:'Ваша идея (необязательно)',mSend:'Отправить запрос',
-  mNote:'Прототип: отправка имитируется.',req:'Укажите имя и электронную почту.',okTitle:'Запрос подготовлен',okText:'Прототип: ничего не отправлено. В рабочей версии запрос поступит команде Echolocation.',close:'Закрыть',
+  mNote:'',req:'Укажите имя и электронную почту.',okTitle:'Запрос отправлен',okText:'Спасибо! Мы получили вашу заявку и ответим по почте или в мессенджере как можно скорее.',close:'Закрыть',
   opt_general:'Пока не знаю — посоветуйте',opt_proposal:'Частные / корпоративные услуги',opt_cars:'Премиальный авто от REV8'},
  ar:{cHead:'تواصل معنا مباشرة',cWa:'واتساب',cWc:'وي تشات',cEm:'البريد الإلكتروني',cCopy:'نسخ',cCopied:'تم النسخ',cPend:'بريد تجريبي، سيتم تغييره',nHome:'الرئيسية',nPackages:'باقات السفر',nExp:'التجارب',nRev8:'REV8 Cars',nBiz:'للشركات',nAbout:'من نحن',plan:'خطّط لرحلتك',
   heroTitle:'تجربتك الكاملة في <em>الصين</em>',heroSub:'باقات سفر شاملة بتجارب مميزة وتنقل فاخر وإقامة حصرية ومساعدة شخصية.',
@@ -460,7 +461,7 @@ const D = {
   about:'رحلات فاخرة مصممة خصيصاً في أنحاء الصين، يقدمها فريق محلي في شنغهاي.',fNav:'التنقل',fContact:'تواصل معنا',fCity:'شنغهاي، الصين',
   mTitle:'خطّط لرحلتك',mSub:'أخبرنا بما تفكر فيه وسنرسل لك عرضاً.',mName:'الاسم الكامل',mEmail:'البريد الإلكتروني',mPhone:'الهاتف / WeChat / WhatsApp',
   mInterest:'أنا مهتم بـ',mFrom:'تاريخ الوصول',mPeople:'عدد المسافرين',mMsg:'فكرتك (اختياري)',mSend:'إرسال الطلب',
-  mNote:'نموذج أولي: الإرسال تجريبي.',req:'يرجى إدخال الاسم والبريد الإلكتروني.',okTitle:'تم تجهيز الطلب',okText:'نموذج أولي: لم يُرسل أي شيء. عند الإطلاق سيصل الطلب إلى فريق Echolocation.',close:'إغلاق',
+  mNote:'',req:'يرجى إدخال الاسم والبريد الإلكتروني.',okTitle:'تم إرسال الطلب',okText:'شكراً لك! استلمنا طلبك وسنرد عليك عبر البريد أو الرسائل في أقرب وقت.',close:'إغلاق',
   opt_general:'لست متأكداً بعد — انصحوني',opt_proposal:'خدمات خاصة / للشركات',opt_cars:'سيارة فاخرة من REV8'}
 };
 let lang; try{lang=localStorage.getItem('echo-lang')}catch(e){} if(!D[lang]) lang='en';
@@ -500,9 +501,21 @@ $$('[data-close]').forEach(b=>b.onclick=closePlan);
 $('#mod').onclick=e=>{ if(e.target.id==='mod') closePlan(); };
 addEventListener('keydown',e=>{ if(e.key==='Escape') closePlan(); });
 $('#rev8link').href=REV8_URL;
-$('#planForm').onsubmit=e=>{
-  e.preventDefault(); const f=new FormData(e.target);
+const FORM_ENDPOINT='https://script.google.com/macros/s/AKfycbxFx4JJ7RHyameeDl7-Pb17rz3J7Ke2kvAcyRdE7OPoIf3YfOENEm6jYG_Wd196N4zi/exec'; // Google Apps Script web-app URL (e-mails the team; destination addresses stay inside the script)
+const FAILMSG={en:'We could not send your request. Please try again or contact us on WhatsApp.',es:'No hemos podido enviar tu solicitud. Inténtalo de nuevo o escríbenos por WhatsApp.',zh:'发送失败，请重试或通过 WhatsApp 联系我们。',ru:'Не удалось отправить заявку. Попробуйте ещё раз или напишите нам в WhatsApp.',ar:'تعذّر إرسال طلبك. حاول مرة أخرى أو راسلنا عبر واتساب.'};
+let sending=false;
+$('#planForm').onsubmit=async e=>{
+  e.preventDefault(); if(sending) return; const f=new FormData(e.target);
   if(!String(f.get('name')).trim()||!String(f.get('email')).trim()){ $('#err').textContent=D[lang].req; return; }
+  $('#err').textContent='';
+  if(String(f.get('website')||'')==='' && FORM_ENDPOINT){
+    sending=true;
+    try{
+      const fields={}; ['name','email','phone','interest','from','people','msg'].forEach(k=>fields[k]=String(f.get(k)||''));
+      await fetch(FORM_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({site:'Echolocation Trip',ref:'ECHO-'+Math.random().toString(36).slice(2,7).toUpperCase(),lang,page:location.href,fields})});
+    }catch(_){ sending=false; $('#err').textContent=FAILMSG[lang]||FAILMSG.en; return; }
+    sending=false;
+  }
   $('#formView').hidden=true; $('#okView').hidden=false;
 };
 // highlight current section in nav

@@ -1,7 +1,7 @@
 import type { Lang } from './data';
 
 /** Web-app URL of the Google Apps Script that e-mails the team (see forms/apps-script.gs). The destination e-mails live only inside that script, never in this code. */
-export const FORM_ENDPOINT = '';
+export const FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxFx4JJ7RHyameeDl7-Pb17rz3J7Ke2kvAcyRdE7OPoIf3YfOENEm6jYG_Wd196N4zi/exec';
 
 export const SEND_FAIL: Record<Lang, string> = {
   en: 'We could not send your request. Please try again or contact us on WhatsApp.',
