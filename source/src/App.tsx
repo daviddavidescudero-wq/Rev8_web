@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { CATEGORIES, CONTACT, GALLERY, SPECS, PENDING_PHOTOS, SAMPLE_PARTNERS, SERVICES, VEHICLES, fullName, shortName, tx, LANGS, LANG_LABEL, type CategoryId, type Lang, type Partner, type Vehicle } from './data';
+import { sendForm, SEND_FAIL } from './send';
 import { calc, fmt, getPartnerRate, type PartnerRate } from './pricing';
 import { ContactIcons, BrandIcon, Socials, AboutPage, FaqPage, LangMenu, LegalPage, Reviews, ContactMethods, useX } from './pages';
 import { isRtl } from './data';
@@ -319,6 +320,22 @@ function Home({ go, onOpen, onAsk, rates }: { go: (v: View, a?: string) => void;
         </Reveal>
       </section>
 
+      {/* Showreel */}
+      <section id="showreel" className="scroll-mt-24 border-t border-neutral-100">
+        <div className="mx-auto grid max-w-[1440px] items-center gap-10 px-5 py-20 md:grid-cols-2 md:gap-16 md:px-10 md:py-28">
+          <Reveal>
+            <Eyebrow>{SHOWREEL[lang].eyebrow}</Eyebrow>
+            <h2 className="mt-3 font-display text-4xl font-medium tracking-[-0.03em] md:text-5xl">{SHOWREEL[lang].title}</h2>
+            <p className="mt-5 max-w-md text-[17px] leading-relaxed text-neutral-600">{SHOWREEL[lang].text}</p>
+          </Reveal>
+          <Reveal delay={120} className="mx-auto w-full max-w-[340px]">
+            <video controls playsInline preload="none" poster="images/services/rev8-showreel-poster.webp" className="aspect-[9/16] w-full rounded-2xl bg-black object-cover shadow-xl">
+              <source src="images/services/rev8-showreel.mp4" type="video/mp4" />
+            </video>
+          </Reveal>
+        </div>
+      </section>
+
       {/* Experience */}
       <section id="experience" className="scroll-mt-24 border-t border-neutral-100">
         <div className="mx-auto grid max-w-[1440px] gap-12 px-5 py-24 md:grid-cols-12 md:px-10 md:py-32">
@@ -517,6 +534,13 @@ function VehicleCard({ v, onOpen, onAsk, rate }: { v: Vehicle; onOpen: (v: Vehic
   );
 }
 
+const SHOWREEL: Record<Lang, { eyebrow: string; title: string; text: string }> = {
+  en: { eyebrow: 'Showreel', title: 'See REV8 in action', text: 'Collect your car at the airport or your hotel, with our team by your side from the first minute.' },
+  es: { eyebrow: 'Vídeo', title: 'Mira REV8 en acción', text: 'Recoge tu coche en el aeropuerto o en tu hotel, con nuestro equipo a tu lado desde el primer minuto.' },
+  zh: { eyebrow: '视频', title: '看看 REV8 的服务', text: '在机场或酒店提车，从第一分钟起就有我们的团队陪伴。' },
+  ru: { eyebrow: 'Видео', title: 'REV8 в деле', text: 'Получите автомобиль в аэропорту или отеле — наша команда рядом с первой минуты.' },
+  ar: { eyebrow: 'فيديو', title: 'شاهد REV8 في العمل', text: 'استلم سيارتك في المطار أو الفندق، وفريقنا بجانبك منذ اللحظة الأولى.' },
+};
 const SPEC_L = {
   en: { seats: 'Seats', power: 'Power', hp: 'hp', z: '0–100 km/h', top: 'Top speed', engine: 'Engine' },
   es: { seats: 'Plazas', power: 'Potencia', hp: 'CV', z: '0–100 km/h', top: 'Vel. máx.', engine: 'Motor' },
@@ -700,12 +724,25 @@ function Inquiry({ open, vehicleId, message, onClose, partner, onBehalf }: { ope
   const [done, setDone] = useState<string | null>(null);
   useEffect(() => { if (open) { setF({ ...empty, vehicle: vehicleId, message }); setErr(''); setDone(null); } }, [open, vehicleId, message]);
   const set = (k: keyof typeof empty) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => setF({ ...f, [k]: e.target.value });
-  const submit = (e: React.FormEvent) => {
+  const [busy, setBusy] = useState(false);
+  const [hp, setHp] = useState('');
+  const submit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (busy) return;
     if (!f.name.trim() || !f.email.trim() || !f.from || !f.to || (onBehalf && !f.guest.trim())) return setErr(t.form.required);
     if (f.to < f.from) return setErr(t.form.dates);
     setErr('');
-    setDone('INQ-' + Math.random().toString(36).slice(2, 7).toUpperCase());
+    const ref = 'INQ-' + Math.random().toString(36).slice(2, 7).toUpperCase();
+    const car = VEHICLES.find((x) => x.id === f.vehicle);
+    setBusy(true);
+    const ok = await sendForm('REV8 Cars', ref, {
+      name: f.name, email: f.email, phone: f.phone, car: car ? fullName(car, 'en') : 'Any car', from: f.from, to: f.to,
+      service: ['Self-drive', 'Chauffeur', 'Experience'][Number(f.service)] || f.service, message: f.message,
+      guest: onBehalf ? f.guest : '', partner: partner ? partner.id : '',
+    }, lang, hp);
+    setBusy(false);
+    if (!ok) return setErr(SEND_FAIL[lang]);
+    setDone(ref);
   };
   const field = 'mt-1.5 w-full normal-case tracking-normal font-normal text-neutral-900 border-b border-neutral-300 bg-transparent py-2 text-[15px] focus:border-neutral-950 focus:outline-none';
   const lbl = 'block text-[11px] font-medium uppercase tracking-[0.16em] text-neutral-500';
@@ -759,8 +796,8 @@ function Inquiry({ open, vehicleId, message, onClose, partner, onBehalf }: { ope
             <label className={`${lbl} sm:col-span-2`}>{t.form.message}<textarea rows={3} className={`${field} resize-none`} value={f.message} onChange={set('message')} /></label>
           </div>
           {err && <p className="mt-5 text-[13px] text-red-700">{err}</p>}
-          <Btn type="submit" className="mt-8 w-full">{t.form.submit}</Btn>
-          <Note className="mt-4">{lang === 'es' ? 'Prototipo: el envío está simulado.' : 'Prototype: submission is simulated.'}</Note>
+          <input type="text" tabIndex={-1} autoComplete="off" aria-hidden="true" value={hp} onChange={(e) => setHp(e.target.value)} style={{ position: 'absolute', left: '-9999px', opacity: 0 }} />
+          <Btn type="submit" className="mt-8 w-full" disabled={busy}>{t.form.submit}</Btn>
         </form>
       )}
     </Modal>

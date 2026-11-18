@@ -5,6 +5,7 @@ import { CATEGORIES, VEHICLES, shortName, tx, LANGS, LANG_LABEL, type CategoryId
 import { fmt } from './pricing';
 import { LangMenu, ContactMethods, Socials } from './pages';
 import { AppCtx } from './ui';
+import { sendForm, SEND_FAIL } from './send';
 import { isRtl, CONTACT } from './data';
 
 
@@ -217,7 +218,7 @@ function HotelApp() {
         </div>
       </footer>
 
-      {form && <MeetForm t={t} onClose={() => setForm(false)} />}
+      {form && <MeetForm t={t} lang={lang} onClose={() => setForm(false)} />}
     </div>
   );
 }
@@ -242,7 +243,9 @@ function CarCard({ v, lang, t }: { v: Vehicle; lang: Lang; t: (typeof T)['en'] }
   );
 }
 
-function MeetForm({ t, onClose }: { t: (typeof T)['en']; onClose: () => void }) {
+function MeetForm({ t, lang, onClose }: { t: (typeof T)['en']; lang: Lang; onClose: () => void }) {
+  const [busy, setBusy] = useState(false);
+  const [hp, setHp] = useState('');
   const [f, setF] = useState({ hotel: '', name: '', contact: '', msg: '' });
   const [err, setErr] = useState('');
   const [ok, setOk] = useState(false);
@@ -260,9 +263,10 @@ function MeetForm({ t, onClose }: { t: (typeof T)['en']; onClose: () => void }) 
             <button onClick={onClose} className="mt-6 rounded-full bg-neutral-950 px-6 py-3 text-[13px] font-medium text-white">{t.form.close}</button>
           </>
         ) : (
-          <form noValidate onSubmit={(e) => { e.preventDefault(); if (!f.hotel.trim() || !f.name.trim() || !f.contact.trim()) return setErr(t.form.req); setOk(true); }}>
+          <form noValidate onSubmit={async (e) => { e.preventDefault(); if (busy) return; if (!f.hotel.trim() || !f.name.trim() || !f.contact.trim()) return setErr(t.form.req); setErr(''); setBusy(true); const good = await sendForm('REV8 Hotels', 'HOTEL-' + Math.random().toString(36).slice(2, 7).toUpperCase(), { hotel: f.hotel, name: f.name, contact: f.contact, message: f.msg }, lang, hp); setBusy(false); if (!good) return setErr(SEND_FAIL[lang]); setOk(true); }}>
             <h3 className="font-display text-2xl font-medium">{t.form.title}</h3>
             <div className="mt-5 space-y-4">
+              <input type="text" tabIndex={-1} autoComplete="off" aria-hidden="true" value={hp} onChange={(e) => setHp(e.target.value)} style={{ position: 'absolute', left: '-9999px', opacity: 0 }} />
               <label className={lbl}>{t.form.hotel} *<input className={field} value={f.hotel} onChange={set('hotel')} /></label>
               <label className={lbl}>{t.form.name} *<input className={field} value={f.name} onChange={set('name')} /></label>
               <label className={lbl}>{t.form.contact} *<input className={field} value={f.contact} onChange={set('contact')} /></label>
@@ -270,7 +274,7 @@ function MeetForm({ t, onClose }: { t: (typeof T)['en']; onClose: () => void }) 
             </div>
             {err && <p className="mt-3 text-[13px] text-red-700">{err}</p>}
             <div className="mt-6 flex gap-3">
-              <button type="submit" className="rounded-full bg-neutral-950 px-6 py-3 text-[13px] font-medium text-white">{t.form.send}</button>
+              <button type="submit" disabled={busy} className="rounded-full bg-neutral-950 px-6 py-3 text-[13px] font-medium text-white disabled:opacity-60">{t.form.send}</button>
               <button type="button" onClick={onClose} className="rounded-full border border-neutral-300 px-6 py-3 text-[13px] font-medium">{t.form.close}</button>
             </div>
           </form>
