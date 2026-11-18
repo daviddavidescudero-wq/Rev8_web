@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Echolocation · China Experiences</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b0f17;--bg2:#111722;--card:#151c28;--line:rgba(214,170,98,.22);--line2:rgba(255,255,255,.1);--gold:#d6aa62;--gold2:#e9c88d;--txt:#f1ece2;--mut:#a9b0bc;--ivory:#f2ede4;--ink:#1a1712;
+--serif:"Cormorant Garamond",Georgia,"Songti SC","Noto Serif SC",serif;--sans:Inter,system-ui,-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;color-scheme:dark}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--txt);font-family:var(--sans);font-weight:300;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;cursor:pointer}
+img{display:block;max-width:100%}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.serif{font-family:var(--serif);font-weight:500;letter-spacing:.005em}
+.gold{color:var(--gold)}
+.eyebrow{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.btn{white-space:nowrap;display:inline-flex;align-items:center;gap:10px;border-radius:6px;padding:12px 22px;font-size:14px;font-weight:500;transition:.2s;border:1px solid transparent;background:none}
+.btn.g{background:linear-gradient(180deg,#e2b977,#c9984f);color:#1b1407}
+.btn.g:hover{filter:brightness(1.08)}
+.btn.o{border-color:rgba(255,255,255,.55);color:#fff}
+.btn.o:hover{border-color:var(--gold);color:var(--gold2)}
+.btn.ol{border-color:var(--gold);color:var(--gold2)}
+.btn.ol:hover{background:var(--gold);color:#1b1407}
+.btn.dark{border-color:#b8915a;color:#3a2a10}
+.btn.dark:hover{background:#c9984f;color:#1b1407}
+.arrow{font-size:16px;line-height:1}
+
+/* header */
+header{position:sticky;top:0;z-index:40;background:rgba(11,15,23,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line2)}
+.hd{display:flex;align-items:center;gap:28px;height:76px}
+.logo{display:flex;flex-direction:row;align-items:center;gap:12px;line-height:1}.logo .mk{height:30px;width:auto}.hd .logo b{font-size:16px;letter-spacing:.26em}.hd .logo small{font-size:7.5px;letter-spacing:.34em}.lang *{white-space:nowrap}.logo .lt{display:flex;flex-direction:column;align-items:center}@media(max-width:560px){.lang svg{display:none}.logo .mk{height:24px}.logo{gap:8px}.hd .logo b{font-size:12.5px;letter-spacing:.2em}.hd .logo small{font-size:6px;letter-spacing:.26em}}
+.logo b{font-family:var(--sans);font-weight:400;letter-spacing:.32em;font-size:19px}
+.logo small{margin-top:6px;font-size:8.5px;letter-spacing:.42em;color:var(--gold);text-transform:uppercase}
+.sep{width:1px;height:34px;background:var(--line2)}
+nav.main{display:flex;gap:22px;font-size:13.5px;white-space:nowrap;color:#d8dbe2;flex:1;justify-content:center}
+nav.main a{padding:6px 0;border-bottom:1px solid transparent}
+nav.main a:hover,nav.main a.on{color:var(--gold2);border-color:var(--gold)}
+.lang{position:relative;font-size:13px;color:#d8dbe2}
+.lang button{background:none;border:0;padding:6px 8px;color:inherit;cursor:pointer;font:inherit}
+.lang .lcur{display:flex;align-items:center;gap:7px;border-radius:99px}.lang .lcur:hover{background:rgba(255,255,255,.08)}
+.lang .lcur.on .car{transform:rotate(180deg)}
+.lmenu{display:none;position:absolute;inset-inline-end:0;top:calc(100% + 8px);min-width:170px;margin:0;padding:6px 0;list-style:none;background:#fff;border-radius:12px;box-shadow:0 14px 40px rgba(0,0,0,.35);z-index:80}
+.lmenu.open{display:block}.lmenu button{display:flex;width:100%;justify-content:space-between;padding:10px 16px;color:#14161b;text-align:start}
+.lmenu button:hover{background:#f3f3f1}.lmenu button[aria-pressed=true]{font-weight:600}.lmenu button[aria-pressed=true]::after{content:'✓'}
+.burger{display:none;background:none;border:0;width:40px;height:40px}
+.burger i{display:block;width:20px;height:1px;background:#fff;margin:5px auto}
+.logo b{white-space:nowrap}@media(max-width:420px){.logo b{font-size:15px;letter-spacing:.26em}.logo small{font-size:7.5px}}
+.mnav{display:none;border-top:1px solid var(--line2);padding:8px 24px 20px}
+.mnav a{display:block;padding:14px 0;border-bottom:1px solid var(--line2);font-family:var(--serif);font-size:22px}
+@media(max-width:1120px){.hd{gap:12px}.hd .lang{margin-left:auto}nav.main,.hd .sep,.hd .plan{display:none}.burger{display:block}.hd{justify-content:space-between}.mnav.open{display:block}}
+
+/* hero */
+.hero{position:relative;overflow:hidden;min-height:560px;display:flex;align-items:center}
+.hero .bg{position:absolute;inset:0 0 0 30%}
+.hero .s{position:absolute;inset:0;background:center/cover no-repeat;opacity:0;transform:scale(1.06);transition:opacity 1.6s ease,transform 7s linear}
+.hero .s.on{opacity:1;transform:scale(1)}
+.hdots{position:absolute;z-index:3;left:0;right:0;bottom:26px;display:flex;justify-content:flex-end;gap:8px;max-width:1200px;margin:0 auto;padding:0 24px}
+.hdots button{width:26px;height:3px;border:0;padding:0;background:rgba(255,255,255,.3);border-radius:2px}
+.hdots button.on{background:var(--gold)}
+@media(prefers-reduced-motion:reduce){.hero .s{transition:none;transform:none}}
+.hero:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,var(--bg) 30%,rgba(11,15,23,.75) 48%,rgba(11,15,23,.1) 75%,rgba(11,15,23,.35)),linear-gradient(0deg,var(--bg),transparent 14%)}
+.hero .in{position:relative;z-index:2;padding:90px 0 100px;max-width:560px}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(44px,6.4vw,76px);line-height:1;margin:0 0 22px}
+.hero h1 em{font-style:normal;color:var(--gold)}
+html[lang=zh] .hero h1{font-size:clamp(38px,5vw,62px);letter-spacing:.02em}html[lang=zh] .sh h2,html[lang=zh] .b-top h2{letter-spacing:.03em}
+.hero p{font-size:17px;color:#d9dce3;margin:0 0 30px;max-width:44ch}
+.row{display:flex;gap:14px;flex-wrap:wrap}
+@media(max-width:760px){.hero .bg{inset:0;opacity:.55}.hero:before{background:linear-gradient(0deg,var(--bg) 8%,rgba(11,15,23,.55))}}
+
+/* feature cards */
+.feat{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px;position:relative;z-index:3}
+@media(max-width:860px){.feat{grid-template-columns:1fr}}
+.fc{position:relative;display:block;border:1px solid var(--line);border-radius:12px;overflow:hidden;aspect-ratio:16/11;background:var(--card)}
+.fc img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1s}
+.fc:hover img{transform:scale(1.04)}
+.fc:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(8,11,17,.95) 8%,rgba(8,11,17,.35) 55%,transparent)}
+.fc .tx{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:20px 22px;display:grid;grid-template-columns:40px 1fr 20px;gap:14px;align-items:end}
+.fc .ic{color:var(--gold)}
+.fc h3{margin:0 0 4px;font-family:var(--sans);font-weight:400;font-size:19px}
+.fc p{margin:0;font-size:13px;color:#c8ccd4;line-height:1.4}
+.ext{position:absolute;top:12px;right:12px;z-index:2;font-size:11px;letter-spacing:.08em;background:rgba(11,15,23,.7);border:1px solid var(--line);padding:4px 9px;border-radius:999px;color:var(--gold2)}
+
+.trust{display:grid;grid-template-columns:repeat(4,1fr);margin:26px 0 0;border-top:1px solid var(--line2);border-bottom:1px solid var(--line2)}
+.trust div{display:flex;align-items:center;gap:12px;justify-content:center;padding:18px 10px;font-size:13.5px;color:#dfe2e8}
+.trust div+div{border-left:1px solid var(--line2)}
+.trust svg{color:var(--gold);flex:none}
+@media(max-width:860px){.trust{grid-template-columns:1fr 1fr}.trust div:nth-child(3){border-left:0}.trust div:nth-child(n+3){border-top:1px solid var(--line2)}}
+
+/* packages */
+section{scroll-margin-top:80px}
+.sh{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin:70px 0 26px}
+.sh h2{font-family:var(--serif);font-weight:400;font-size:clamp(34px,4.6vw,50px);margin:0;line-height:1.05}
+.sh p{margin:8px 0 0;color:#cdd1d8}
+.link{color:var(--gold2);font-size:14px;border-bottom:1px solid var(--gold);padding-bottom:2px;background:none;border-top:0;border-left:0;border-right:0}
+.pk{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media(max-width:960px){.pk{grid-template-columns:1fr 1fr}}@media(max-width:520px){.pk{grid-template-columns:1fr}}
+.pc{position:relative;text-align:left;border:1px solid var(--line);border-radius:10px;overflow:hidden;aspect-ratio:4/3.4;background:var(--card);padding:0}
+.pc img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1s}
+.pc:hover img{transform:scale(1.05)}
+.pc:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(8,11,17,.94) 10%,rgba(8,11,17,.2) 58%,transparent)}
+.pc .tx{position:absolute;inset:auto 0 0 0;z-index:2;padding:18px 18px 16px}
+.pc .ic{color:var(--gold);margin-bottom:8px}
+.pc h3{margin:0 0 4px;font-weight:400;font-size:18px}
+.pc p{margin:0;font-size:13px;color:#c8ccd4;line-height:1.4;padding-right:28px}
+.pc .arrow{position:absolute;right:16px;bottom:18px;z-index:2}
+
+/* 360 band */
+.band{position:relative;margin-top:70px;border-top:1px solid var(--line2);border-bottom:1px solid var(--line2);overflow:hidden}
+.band .bg{position:absolute;inset:0 0 0 52%;background:url(img/wall.webp) center/cover}
+.band:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,var(--bg) 52%,rgba(11,15,23,.55) 66%,rgba(11,15,23,.05))}
+.band .in{position:relative;z-index:2;padding:46px 0 34px}
+.b-top{display:grid;grid-template-columns:300px 1fr;gap:40px;align-items:center;max-width:820px}
+.b-top h2{font-family:var(--serif);font-weight:400;font-size:clamp(34px,4vw,46px);line-height:1;margin:10px 0 0}
+.b-top h2:after{content:"";display:block;width:34px;height:2px;background:var(--gold);margin-top:16px}
+.b-top>p{margin:0;padding-left:30px;border-left:1px solid var(--line2);color:#d9dce3}
+.icons{display:grid;grid-template-columns:repeat(5,1fr);max-width:720px;margin-top:32px}
+.icons div{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;text-align:center;font-size:13px;line-height:1.35;color:#e3e5ea;padding:4px 8px}
+.icons div+div{border-left:1px solid var(--line2)}
+.icons svg{display:block;flex:none;color:var(--gold);margin:0 0 10px}
+@media(max-width:760px){.band .bg{inset:0;opacity:.3}.band:before{background:rgba(11,15,23,.6)}.b-top{grid-template-columns:1fr;gap:16px}.b-top>p{padding-left:0;border:0}.icons{grid-template-columns:repeat(3,1fr);row-gap:18px}.icons div:nth-child(4){border-left:0}}
+
+/* private services (light) */
+.light{background:linear-gradient(90deg,#f4efe6,#efe8dc);color:var(--ink);position:relative;overflow:hidden}
+.light .bimg{position:absolute;right:0;bottom:0;top:0;width:200px;background:url(img/building.webp) center/cover;-webkit-mask:linear-gradient(90deg,transparent,#000 60%);mask:linear-gradient(90deg,transparent,#000 60%)}
+.lg{display:grid;grid-template-columns:1.1fr 1.4fr;gap:30px;align-items:center;padding:40px 220px 40px 0;position:relative}
+.lg h2{font-family:var(--serif);font-weight:500;font-size:clamp(30px,3.4vw,38px);margin:0 0 8px;color:#18140d}
+.lg p{margin:0 0 20px;color:#5b5346}
+.svc{display:grid;grid-template-columns:repeat(3,1fr)}
+.svc div{display:flex;flex-direction:column;align-items:center;line-height:1.35;text-align:center;font-size:14px;color:#2a241a;padding:6px 14px;border-left:1px solid rgba(60,45,20,.15)}
+.svc svg{display:block;flex:none;color:#3a2c14;margin:0 0 10px}
+@media(max-width:900px){.lg{grid-template-columns:1fr;padding-right:0}.light .bimg{display:none}}
+
+/* cta */
+.cta{position:relative;overflow:hidden;background:radial-gradient(120% 140% at 50% 120%,#2a2418,#0b0f17 60%)}
+.cta .in{display:flex;align-items:center;justify-content:center;gap:50px;padding:46px 0;flex-wrap:wrap;text-align:center}
+.cta h2{font-family:var(--serif);font-weight:400;font-size:clamp(28px,3.4vw,38px);margin:0 0 6px}
+.cta h2 em{font-style:normal;color:var(--gold)}
+.cta p{margin:0;color:#d4d7dd}
+
+/* rev8 strip */
+.rev{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:70px;background:var(--card)}
+.rev .im{min-height:300px;background:url(img/rev8.webp) center/cover}
+.rev .tx{padding:38px}
+.rev h2{font-family:var(--serif);font-weight:400;font-size:clamp(30px,3.4vw,42px);margin:10px 0 12px;line-height:1.05}
+.rev p{color:#cdd1d8;margin:0 0 24px}
+@media(max-width:760px){.rev{grid-template-columns:1fr}.rev .im{min-height:220px}}
+
+/* footer */
+footer{border-top:1px solid var(--line2);margin-top:0}
+.ft{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:30px;padding:46px 0}
+.ft>div+div{border-left:1px solid var(--line2);padding-left:30px}
+.ft h4{margin:0 0 12px;color:var(--gold);font-weight:500;font-size:13px}
+.ft .logo{display:flex}.ft button{background:none;border:0;padding:0;font-size:13.5px}
+.ft a,.ft span{display:block;font-size:13.5px;color:#d4d7dd;margin:0 0 6px;background:none;border:0;padding:0;text-align:left}
+.ft a:hover{color:var(--gold2)}
+@media(max-width:760px){.ft{grid-template-columns:1fr}.ft>div+div{border-left:0;padding-left:0}}
+.copy{border-top:1px solid var(--line2);padding:16px 0;font-size:12px;color:#7d8491}
+
+/* modal */
+.mod{position:fixed;inset:0;z-index:60;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.6);padding:16px}
+.mod.open{display:flex}
+.box{background:#121926;border:1px solid var(--line);border-radius:14px;max-width:520px;width:100%;padding:28px;max-height:92vh;overflow:auto;position:relative}
+.box h3{font-family:var(--serif);font-weight:400;font-size:30px;margin:0 0 6px}
+.box .x{position:absolute;right:14px;top:12px;background:none;border:0;font-size:20px;color:var(--mut)}
+.fg{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+.fg label{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut)}
+.fg .w{grid-column:1/-1}
+.fg input,.fg select,.fg textarea{display:block;width:100%;margin-top:6px;background:#0c121c;border:1px solid var(--line2);border-radius:6px;color:#fff;padding:10px 12px;font:inherit;font-size:15px;text-transform:none;letter-spacing:0}
+.fg input:focus,.fg select:focus,.fg textarea:focus{outline:none;border-color:var(--gold)}
+.err{color:#f0a3a3;font-size:13px;margin:12px 0 0;min-height:1em}
+.note{font-size:12px;color:#7d8491;margin-top:14px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap hd">
+    <a class="logo" href="#top" aria-label="Echolocation Trip"><img class="mk" src="img/logo-mark.webp" alt=""><span class="lt"><b>ECHOLOCATION</b><small>– China Experiences –</small></span></a>
+    <span class="sep"></span>
+    <nav class="main">
+      <a href="#top" class="on" data-k="nHome"></a>
+      <a href="#packages" data-k="nPackages"></a>
+      <a href="#experience" data-k="nExp"></a>
+      <a href="#rev8" data-k="nRev8"></a>
+      <a href="#business" data-k="nBiz"></a>
+      <a href="#about" data-k="nAbout"></a>
+    </nav>
+    <div class="lang" id="langdd">
+      <button class="lcur" aria-haspopup="listbox" aria-expanded="false"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg><span id="lname">English</span><svg class="car" width="9" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg></button>
+      <ul class="lmenu" role="listbox"><li><button data-l="en">English</button></li><li><button data-l="zh">中文</button></li><li><button data-l="ru">Русский</button></li><li><button data-l="es">Español</button></li><li><button data-l="ar" dir="rtl">العربية</button></li></ul>
+    </div>
+    <button class="btn ol plan" data-plan><span data-k="plan"></span><span class="arrow">→</span></button>
+    <button class="burger" aria-label="Menu"><i></i><i></i></button>
+  </div>
+  <div class="mnav">
+    <a href="#packages" data-k="nPackages"></a><a href="#experience" data-k="nExp"></a><a href="#rev8" data-k="nRev8"></a><a href="#business" data-k="nBiz"></a><a href="#about" data-k="nAbout"></a>
+    <button class="btn g" style="margin-top:18px;width:100%;justify-content:center" data-plan><span data-k="plan"></span></button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="bg" aria-hidden="true">
+      <div class="s on" style="background-image:url(img/hero.webp)"></div>
+      <div class="s" style="background-image:url(img/sh2.webp);background-position:50% 55%"></div>
+      <div class="s" style="background-image:url(img/sh3.webp);background-position:50% 62%"></div>
+    </div>
+    <div class="hdots"><button class="on" aria-label="1"></button><button aria-label="2"></button><button aria-label="3"></button></div>
+    <div class="wrap" style="width:100%">
+      <div class="in">
+        <h1 data-k="heroTitle"></h1>
+        <p data-k="heroSub"></p>
+        <div class="row">
+          <a class="btn g" href="#packages"><span data-k="ctaPackages"></span><span class="arrow">→</span></a>
+          <a class="btn o" href="#experience"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M10 8.5v7l6-3.5z" fill="currentColor"/></svg><span data-k="ctaDiscover"></span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="feat">
+      <a class="fc" href="#packages"><img src="img/pkg-allin.webp" alt=""><div class="tx">
+        <svg class="ic" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 3l9 4.5-9 4.5-9-4.5z"/><path d="M3 12l9 4.5 9-4.5M3 16.5l9 4.5 9-4.5"/></svg>
+        <div><h3 data-k="f1t"></h3><p data-k="f1p"></p></div><span class="arrow">→</span></div></a>
+      <a class="fc" href="#experience"><img src="img/exp.webp" alt=""><div class="tx">
+        <svg class="ic" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 20c-4 0-8-3-8-8 2 0 5 1 8 4 3-3 6-4 8-4 0 5-4 8-8 8z"/><path d="M12 16c-2-3-2-7 0-11 2 4 2 8 0 11z"/></svg>
+        <div><h3 data-k="f2t"></h3><p data-k="f2p"></p></div><span class="arrow">→</span></div></a>
+      <a class="fc" href="#rev8"><img src="img/mobility.webp" alt="" style="object-position:50% 70%"><span class="ext">REV8 Cars</span><div class="tx">
+        <svg class="ic" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M3 15l2-6c.4-1.2 1.4-2 2.7-2h8.6c1.3 0 2.3.8 2.7 2l2 6v3H3z"/><circle cx="7.5" cy="15.5" r="1.3"/><circle cx="16.5" cy="15.5" r="1.3"/></svg>
+        <div><h3 data-k="f3t"></h3><p data-k="f3p"></p></div><span class="arrow">→</span></div></a>
+    </div>
+
+    <div class="trust">
+      <div><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M3 9l4-5h10l4 5-9 11z"/><path d="M3 9h18M9 4l3 16 3-16"/></svg><span data-k="t1"></span></div>
+      <div><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><span data-k="t2"></span></div>
+      <div><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0114 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span data-k="t3"></span></div>
+      <div><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3 19c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5M14.5 14.2c3.2-.6 6.5 1.2 6.5 4.8"/></svg><span data-k="t4"></span></div>
+    </div>
+
+    <section id="packages">
+      <div class="sh"><div><h2 data-k="pkTitle"></h2><p data-k="pkSub"></p></div>
+        <button class="link" data-plan><span data-k="pkAll"></span> →</button></div>
+      <div class="pk" id="pkgrid"></div>
+    </section>
+  </div>
+
+  <section class="band" id="experience">
+    <div class="bg" role="img" aria-label="Great Wall of China"></div>
+    <div class="wrap in">
+      <div class="b-top">
+        <div><p class="eyebrow" data-k="xEyebrow"></p><h2 data-k="xTitle"></h2></div>
+        <p data-k="xText"></p>
+      </div>
+      <div class="icons">
+        <div><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M2 13l8-2 5-7c.6-.8 2-.6 2 .5L15 11l5 1.5c1 .3 1 1.7 0 2L15 16l2 6.5c0 1.1-1.4 1.3-2 .5l-5-7-8-2z"/></svg><span data-k="i1"></span></div>
+        <div><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M3 18V7M3 13h18v5M21 18v-3M7 13v-2.5A1.5 1.5 0 018.5 9H18a3 3 0 013 3v1"/><circle cx="6" cy="10.5" r="1.5"/></svg><span data-k="i2"></span></div>
+        <div><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M3 15l2-6c.4-1.2 1.4-2 2.7-2h8.6c1.3 0 2.3.8 2.7 2l2 6v3H3z"/><path d="M3 12h18"/><circle cx="7.5" cy="15.5" r="1.2"/><circle cx="16.5" cy="15.5" r="1.2"/></svg><span data-k="i3"></span></div>
+        <div><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M4 20V10l8-6 8 6v10z"/><path d="M9 20v-5h6v5M8 11h8"/></svg><span data-k="i4"></span></div>
+        <div><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M4 14v-2a8 8 0 0116 0v2"/><rect x="3" y="13" width="4" height="6" rx="1.5"/><rect x="17" y="13" width="4" height="6" rx="1.5"/><path d="M19 19c0 1.5-2 2.5-5 2.5"/></svg><span data-k="i5"></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="light" id="business">
+    <div class="bimg" aria-hidden="true"></div>
+    <div class="wrap lg">
+      <div>
+        <h2 data-k="sTitle"></h2>
+        <p data-k="sText"></p>
+        <button class="btn dark" data-plan="proposal"><span data-k="sCta"></span><span class="arrow">→</span></button>
+      </div>
+      <div class="svc">
+        <div style="border-left:0"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M3 15l2-6c.4-1.2 1.4-2 2.7-2h8.6c1.3 0 2.3.8 2.7 2l2 6v3H3z"/><circle cx="7.5" cy="15.5" r="1.2"/><circle cx="16.5" cy="15.5" r="1.2"/></svg><span data-k="s1"></span></div>
+        <div><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M7.5 14h2M11 14h2M14.5 14h2M7.5 17.5h2M11 17.5h2"/></svg><span data-k="s2"></span></div>
+        <div><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5h6v2M3 12h18M11 12v2h2v-2"/></svg><span data-k="s3"></span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <section class="rev" id="rev8">
+      <div class="im" role="img" aria-label="Rolls-Royce Cullinan — REV8 Cars"></div>
+      <div class="tx">
+        <p class="eyebrow" data-k="rEyebrow"></p>
+        <h2 data-k="rTitle"></h2>
+        <p data-k="rText"></p>
+        <a class="btn ol" id="rev8link" target="_blank" rel="noopener"><span data-k="rCta"></span><span class="arrow">↗</span></a>
+      </div>
+    </section>
+  </div>
+
+  <section class="cta" style="margin-top:70px">
+    <div class="wrap in">
+      <div><h2 data-k="cTitle"></h2><p data-k="cText"></p></div>
+      <button class="btn g" data-plan><span data-k="plan"></span><span class="arrow">→</span></button>
+    </div>
+  </section>
+</main>
+
+<footer id="about">
+  <div class="wrap ft">
+    <div>
+      <a class="logo" href="#top" style="align-items:flex-start;flex-direction:row" aria-label="Echolocation Trip"><img class="mk" src="img/logo-mark.webp" alt=""><span class="lt" style="align-items:flex-start"><b>ECHOLOCATION</b><small>– China Experiences –</small></span></a>
+      <p style="color:#a9b0bc;font-size:14px;margin:18px 0 0;max-width:34ch" data-k="about"></p>
+    </div>
+    <div><h4 data-k="fNav"></h4>
+      <a href="#top" data-k="nHome"></a><a href="#packages" data-k="nPackages"></a><a href="#experience" data-k="nExp"></a><a href="#rev8" data-k="nRev8"></a><a href="#business" data-k="nBiz"></a></div>
+    <div><h4 data-k="fContact"></h4>
+      <span data-k="fCity"></span>
+      <a dir="ltr" href="https://wa.me/34644794422" target="_blank" rel="noopener"><span data-k="cWa"></span> +34 644 79 44 22</a>
+      <span dir="ltr" style="display:flex;gap:8px;align-items:center"><span><span data-k="cWc"></span> +86 191 2118 9461</span><button id="cpwc" data-k="cCopy" style="border:1px solid #4a505c;border-radius:99px;padding:2px 10px;font-size:11px;color:#d8dbe2;cursor:pointer"></button></span>
+      <a dir="ltr" href="mailto:hello@example.com">hello@example.com</a><small style="color:#d9a441;font-size:11px" data-k="cPend"></small>
+      <button style="color:var(--gold2);cursor:pointer" data-plan><span data-k="plan"></span> →</button></div>
+  </div>
+  <div class="wrap copy">© 2026 Echolocation · China Experiences</div>
+</footer>
+
+<div class="mod" id="mod" role="dialog" aria-modal="true">
+  <div class="box">
+    <button class="x" aria-label="Close" data-close>✕</button>
+    <div id="formView">
+      <h3 data-k="mTitle"></h3>
+      <p style="color:#a9b0bc;margin:0" data-k="mSub"></p>
+      <form id="planForm" novalidate>
+        <div class="fg">
+          <label class="w"><span data-k="mName"></span> *<input name="name" autocomplete="name"></label>
+          <label><span data-k="mEmail"></span> *<input name="email" type="email" autocomplete="email"></label>
+          <label><span data-k="mPhone"></span><input name="phone"></label>
+          <label class="w"><span data-k="mInterest"></span><select name="interest" id="interest"></select></label>
+          <label><span data-k="mFrom"></span><input name="from" type="date"></label>
+          <label><span data-k="mPeople"></span><input name="people" type="number" min="1" value="2"></label>
+          <label class="w"><span data-k="mMsg"></span><textarea name="msg" rows="3"></textarea></label>
+        </div>
+        <p class="err" id="err"></p>
+        <button class="btn g" type="submit" style="width:100%;justify-content:center;margin-top:6px"><span data-k="mSend"></span></button>
+        <p class="note" data-k="mNote"></p>
+      </form>
+    </div>
+    <div id="okView" hidden>
+      <h3>✓ <span data-k="okTitle"></span></h3>
+      <p style="color:#a9b0bc" data-k="okText"></p>
+      <button class="btn g" data-close><span data-k="close"></span></button>
+    </div>
+  </div>
+</div>
+
+<script>
+const REV8_URL = 'https://claude.ai/artifact/NMfgC51U35j2okTK6YrZDf';
+const PKGS = [
+  {id:'china', img:'img/china.webp', icon:'<path d="M3 21h18M5 21V11h14v10M3 11l9-6 9 6M9 21v-5h6v5M7 8h10"/>'},
+  {id:'nature', img:'img/nature.webp', icon:'<path d="M2 19l6-9 4 5 3-4 7 8z"/><circle cx="17" cy="6" r="1.5"/>'},
+  {id:'food', img:'img/food.webp', icon:'<path d="M4 14h16a8 8 0 01-16 0zM12 6v3M8 7l1 2.5M16 7l-1 2.5M2 14h20"/>'},
+  {id:'premium', img:'img/premium.webp', icon:'<path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z"/>'},
+];
+const D = {
+ en:{cHead:'Talk to us directly',cWa:'WhatsApp',cWc:'WeChat',cEm:'Email',cCopy:'Copy',cCopied:'Copied',cPend:'Example email, pending change',nHome:'Home',nPackages:'Travel packages',nExp:'Experiences',nRev8:'REV8 Cars',nBiz:'Business',nAbout:'About us',plan:'Plan your trip',
+  heroTitle:'Your complete <em>China</em> experience',heroSub:'All-inclusive travel packages with premium experiences, luxury mobility, exclusive stays and personal assistance.',
+  ctaPackages:'View travel packages',ctaDiscover:'Discover the experience',
+  f1t:'All-Inclusive Packages',f1p:'Travel, accommodation, transport and experiences in one plan.',
+  f2t:'Exclusive Experiences',f2p:'Culture, gastronomy, wellness and unique activities.',
+  f3t:'Premium Mobility',f3p:'Luxury cars, private chauffeur and total comfort.',
+  t1:'100% personalised service',t2:'24/7 assistance at destination',t3:'Local knowledge, personal touch',t4:'Trips for individuals and companies',
+  pkTitle:'Our travel packages',pkSub:'Complete experiences, tailored to your interests, time and travel style.',pkAll:'Ask for all packages',
+  p_china:['Essence of China','Culture, history and the most iconic places.'],p_nature:['Nature & Adventure','Unique landscapes and outdoor experiences.'],
+  p_food:['Gastronomy & Culture','Authentic flavours, local markets and tradition.'],p_premium:['Premium Experiences','Exclusive plans, events and access to unique places.'],
+  xEyebrow:'360° experience',xTitle:'All-inclusive, effortless',xText:'We take care of every detail of your trip: planning, bookings, transport, accommodation, tickets and experiences. You just enjoy.',
+  i1:'Flights (optional)',i2:'Premium stays',i3:'Private transport',i4:'Tailored experiences',i5:'24/7 assistance',
+  sTitle:'Private travel services',sText:'Flexible, personalised travel solutions: transfers, private chauffeur and tailor-made itineraries.',sCta:'Request a proposal',
+  s1:'Transfers & private chauffeur',s2:'Personalised itineraries',s3:'Corporate travel & events',
+  rEyebrow:'Our sister company',rTitle:'Drive Shanghai with REV8 Cars',rText:'Rolls-Royce, Ferrari, Lamborghini and more. Add a self-drive or chauffeured luxury car to any Echolocation trip.',rCta:'Explore the REV8 fleet',
+  cTitle:'Ready to experience China <em>like never before</em>?',cText:'Tell us your idea and we will design your perfect trip.',
+  about:'Bespoke luxury journeys across China, from a local team in Shanghai.',fNav:'Navigation',fContact:'Contact',fCity:'Shanghai, China',
+  mTitle:'Plan your trip',mSub:'Tell us what you have in mind and we will send you a proposal.',mName:'Full name',mEmail:'Email',mPhone:'Phone / WeChat / WhatsApp',
+  mInterest:'I am interested in',mFrom:'Arrival date',mPeople:'Travellers',mMsg:'Your idea (optional)',mSend:'Send request',
+  mNote:'Prototype: submission is simulated.',req:'Please enter your name and email.',okTitle:'Request prepared',okText:'Prototype: nothing has been sent. In production this request goes to the Echolocation team.',close:'Close',
+  opt_general:'Not sure yet — advise me',opt_proposal:'Private / corporate services',opt_cars:'Luxury car with REV8'},
+ es:{cHead:'Habla con nosotros directamente',cWa:'WhatsApp',cWc:'WeChat',cEm:'Email',cCopy:'Copiar',cCopied:'Copiado',cPend:'Email de ejemplo, pendiente de cambiar',nHome:'Inicio',nPackages:'Paquetes de viaje',nExp:'Experiencias',nRev8:'REV8 Cars',nBiz:'Empresas',nAbout:'Sobre nosotros',plan:'Planifica tu viaje',
+  heroTitle:'Tu experiencia completa en <em>China</em>',heroSub:'Paquetes de viaje todo incluido, con experiencias premium, movilidad de lujo, alojamiento exclusivo y asistencia personalizada.',
+  ctaPackages:'Ver paquetes de viaje',ctaDiscover:'Descubre la experiencia',
+  f1t:'Paquetes Todo Incluido',f1p:'Viaje, alojamiento, transporte y experiencias en un solo plan.',
+  f2t:'Experiencias Exclusivas',f2p:'Cultura, gastronomía, bienestar y actividades únicas.',
+  f3t:'Movilidad Premium',f3p:'Coches de alta gama, chófer privado y total comodidad.',
+  t1:'Servicio 100% personalizado',t2:'Asistencia 24/7 en destino',t3:'Conocimiento local y trato directo',t4:'Viajes para particulares y empresas',
+  pkTitle:'Nuestros paquetes de viaje',pkSub:'Experiencias completas, diseñadas a medida según tus intereses, tiempo y estilo de viaje.',pkAll:'Pide todos los paquetes',
+  p_china:['Esencia de China','Cultura, historia y los lugares más emblemáticos.'],p_nature:['Naturaleza & Aventura','Paisajes únicos y experiencias al aire libre.'],
+  p_food:['Gastronomía & Cultura','Sabores auténticos, mercados locales y tradición.'],p_premium:['Experiencias Premium','Planes exclusivos, eventos y acceso a espacios únicos.'],
+  xEyebrow:'Experiencia 360°',xTitle:'Todo incluido, sin complicaciones',xText:'Nos encargamos de cada detalle de tu viaje: planificación, reservas, transporte, alojamiento, entradas y experiencias. Tú solo disfruta.',
+  i1:'Vuelos (opcional)',i2:'Alojamiento premium',i3:'Transporte privado',i4:'Experiencias a medida',i5:'Asistencia 24/7',
+  sTitle:'Servicios de viaje privado',sText:'Soluciones de viaje flexibles y personalizadas: traslados, chófer privado y organización de itinerarios a medida.',sCta:'Solicita tu propuesta',
+  s1:'Traslados y chófer privado',s2:'Itinerarios personalizados',s3:'Viajes corporativos y eventos',
+  rEyebrow:'Nuestra empresa hermana',rTitle:'Conduce Shanghái con REV8 Cars',rText:'Rolls-Royce, Ferrari, Lamborghini y más. Añade un coche de lujo, con o sin chófer, a cualquier viaje de Echolocation.',rCta:'Ver la flota REV8',
+  cTitle:'¿Listo para vivir China de <em>forma única</em>?',cText:'Cuéntanos tu idea y diseñaremos tu experiencia perfecta.',
+  about:'Viajes de lujo a medida por China, con un equipo local en Shanghái.',fNav:'Navegación',fContact:'Contacto',fCity:'Shanghái, China',
+  mTitle:'Planifica tu viaje',mSub:'Cuéntanos qué tienes en mente y te enviaremos una propuesta.',mName:'Nombre completo',mEmail:'Email',mPhone:'Teléfono / WeChat / WhatsApp',
+  mInterest:'Me interesa',mFrom:'Fecha de llegada',mPeople:'Viajeros',mMsg:'Tu idea (opcional)',mSend:'Enviar solicitud',
+  mNote:'Prototipo: el envío está simulado.',req:'Indica tu nombre y tu email.',okTitle:'Solicitud preparada',okText:'Prototipo: no se ha enviado nada. En producción esta solicitud le llega al equipo de Echolocation.',close:'Cerrar',
+  opt_general:'Aún no lo sé — aconsejadme',opt_proposal:'Servicios privados / empresa',opt_cars:'Coche de lujo con REV8'},
+ zh:{cHead:'直接联系我们',cWa:'WhatsApp',cWc:'微信',cEm:'邮箱',cCopy:'复制',cCopied:'已复制',cPend:'示例邮箱，待更换',nHome:'首页',nPackages:'旅行套餐',nExp:'体验',nRev8:'REV8 Cars',nBiz:'企业服务',nAbout:'关于我们',plan:'规划您的旅程',
+  heroTitle:'您的完整<em>中国</em>体验',heroSub:'全包式旅行套餐：尊享体验、豪华出行、精选住宿与专属贴心服务。',
+  ctaPackages:'查看旅行套餐',ctaDiscover:'探索体验',
+  f1t:'全包套餐',f1p:'行程、住宿、交通与体验，一个方案全部搞定。',
+  f2t:'独家体验',f2p:'文化、美食、养生与独特活动。',
+  f3t:'尊享出行',f3p:'豪华座驾、专属司机，全程舒适。',
+  t1:'100% 个性化服务',t2:'目的地 24/7 协助',t3:'本地经验，直接沟通',t4:'个人与企业出行',
+  pkTitle:'我们的旅行套餐',pkSub:'根据您的兴趣、时间和旅行风格量身定制的完整体验。',pkAll:'索取全部套餐',
+  p_china:['中国精华','文化、历史与最具代表性的名胜。'],p_nature:['自然与探险','独特风光与户外体验。'],
+  p_food:['美食与文化','地道风味、本地市集与传统。'],p_premium:['尊享体验','独家行程、活动与特别场所。'],
+  xEyebrow:'360° 体验',xTitle:'全程包办，轻松无忧',xText:'旅程的每个细节都由我们负责：规划、预订、交通、住宿、门票与体验。您只需尽情享受。',
+  i1:'机票（可选）',i2:'高端住宿',i3:'私人交通',i4:'定制体验',i5:'24/7 协助',
+  sTitle:'私人旅行服务',sText:'灵活、个性化的出行方案：接送、专属司机与定制行程安排。',sCta:'获取方案',
+  s1:'接送与专属司机',s2:'个性化行程',s3:'商务差旅与活动',
+  rEyebrow:'我们的姊妹公司',rTitle:'与 REV8 Cars 一起驾驭上海',rText:'劳斯莱斯、法拉利、兰博基尼等。可为任何 Echolocation 行程加配自驾或配司机的豪华座驾。',rCta:'查看 REV8 车队',
+  cTitle:'准备好以<em>独特方式</em>体验中国了吗？',cText:'告诉我们您的想法，我们为您打造完美旅程。',
+  about:'中国境内的定制奢华旅程，由上海本地团队为您服务。',fNav:'导航',fContact:'联系方式',fCity:'中国 · 上海',
+  mTitle:'规划您的旅程',mSub:'告诉我们您的想法，我们将为您发送方案。',mName:'姓名',mEmail:'邮箱',mPhone:'电话 / 微信 / WhatsApp',
+  mInterest:'我感兴趣的是',mFrom:'抵达日期',mPeople:'出行人数',mMsg:'您的想法（可选）',mSend:'发送请求',
+  mNote:'原型说明：提交为模拟操作。',req:'请填写您的姓名和邮箱。',okTitle:'请求已准备好',okText:'原型说明：未发送任何内容。正式上线后，此请求将发送给 Echolocation 团队。',close:'关闭',
+  opt_general:'还不确定——请给我建议',opt_proposal:'私人 / 企业服务',opt_cars:'REV8 豪华座驾'},
+ ru:{cHead:'Свяжитесь с нами напрямую',cWa:'WhatsApp',cWc:'WeChat',cEm:'Эл. почта',cCopy:'Копировать',cCopied:'Скопировано',cPend:'Пример адреса, будет заменён',nHome:'Главная',nPackages:'Туристические пакеты',nExp:'Впечатления',nRev8:'REV8 Cars',nBiz:'Для бизнеса',nAbout:'О нас',plan:'Спланировать поездку',
+  heroTitle:'Ваш полный опыт <em>Китая</em>',heroSub:'Пакеты «всё включено» с премиальными впечатлениями, роскошной мобильностью, эксклюзивным проживанием и персональным сопровождением.',
+  ctaPackages:'Смотреть пакеты',ctaDiscover:'Узнать больше',
+  f1t:'Пакеты «всё включено»',f1p:'Перелёт, проживание, транспорт и впечатления в одном плане.',
+  f2t:'Эксклюзивные впечатления',f2p:'Культура, гастрономия, велнес и уникальные занятия.',
+  f3t:'Премиальная мобильность',f3p:'Роскошные авто, личный водитель и полный комфорт.',
+  t1:'100% индивидуальный сервис',t2:'Поддержка 24/7 на месте',t3:'Знание страны и личный подход',t4:'Поездки для частных лиц и компаний',
+  pkTitle:'Наши туристические пакеты',pkSub:'Полноценные программы, подобранные под ваши интересы, время и стиль путешествия.',pkAll:'Запросить все пакеты',
+  p_china:['Суть Китая','Культура, история и самые знаковые места.'],p_nature:['Природа и приключения','Уникальные пейзажи и активный отдых.'],
+  p_food:['Гастрономия и культура','Настоящие вкусы, местные рынки и традиции.'],p_premium:['Премиальные впечатления','Эксклюзивные программы, события и доступ в особые места.'],
+  xEyebrow:'Опыт 360°',xTitle:'Всё включено, без усилий',xText:'Мы берём на себя каждую деталь поездки: планирование, бронирование, транспорт, проживание, билеты и впечатления. Вам остаётся наслаждаться.',
+  i1:'Авиабилеты (по желанию)',i2:'Премиальное проживание',i3:'Личный транспорт',i4:'Индивидуальные программы',i5:'Поддержка 24/7',
+  sTitle:'Частные туристические услуги',sText:'Гибкие персональные решения для поездок: трансферы, личный водитель и маршруты на заказ.',sCta:'Запросить предложение',
+  s1:'Трансферы и личный водитель',s2:'Индивидуальные маршруты',s3:'Деловые поездки и мероприятия',
+  rEyebrow:'Наша родственная компания',rTitle:'Откройте Шанхай с REV8 Cars',rText:'Rolls-Royce, Ferrari, Lamborghini и другие. Добавьте к любой поездке Echolocation премиальное авто с водителем или без.',rCta:'Посмотреть автопарк REV8',
+  cTitle:'Готовы увидеть Китай <em>как никогда раньше</em>?',cText:'Расскажите свою идею, и мы создадим для вас идеальное путешествие.',
+  about:'Индивидуальные роскошные путешествия по Китаю от местной команды в Шанхае.',fNav:'Навигация',fContact:'Контакты',fCity:'Шанхай, Китай',
+  mTitle:'Спланировать поездку',mSub:'Расскажите, что вы задумали, и мы пришлём предложение.',mName:'Полное имя',mEmail:'Эл. почта',mPhone:'Телефон / WeChat / WhatsApp',
+  mInterest:'Меня интересует',mFrom:'Дата прибытия',mPeople:'Путешественников',mMsg:'Ваша идея (необязательно)',mSend:'Отправить запрос',
+  mNote:'Прототип: отправка имитируется.',req:'Укажите имя и электронную почту.',okTitle:'Запрос подготовлен',okText:'Прототип: ничего не отправлено. В рабочей версии запрос поступит команде Echolocation.',close:'Закрыть',
+  opt_general:'Пока не знаю — посоветуйте',opt_proposal:'Частные / корпоративные услуги',opt_cars:'Премиальный авто от REV8'},
+ ar:{cHead:'تواصل معنا مباشرة',cWa:'واتساب',cWc:'وي تشات',cEm:'البريد الإلكتروني',cCopy:'نسخ',cCopied:'تم النسخ',cPend:'بريد تجريبي، سيتم تغييره',nHome:'الرئيسية',nPackages:'باقات السفر',nExp:'التجارب',nRev8:'REV8 Cars',nBiz:'للشركات',nAbout:'من نحن',plan:'خطّط لرحلتك',
+  heroTitle:'تجربتك الكاملة في <em>الصين</em>',heroSub:'باقات سفر شاملة بتجارب مميزة وتنقل فاخر وإقامة حصرية ومساعدة شخصية.',
+  ctaPackages:'شاهد باقات السفر',ctaDiscover:'اكتشف التجربة',
+  f1t:'باقات شاملة',f1p:'السفر والإقامة والنقل والتجارب في خطة واحدة.',
+  f2t:'تجارب حصرية',f2p:'ثقافة وطعام وعافية وأنشطة فريدة.',
+  f3t:'تنقل فاخر',f3p:'سيارات فاخرة وسائق خاص وراحة تامة.',
+  t1:'خدمة مخصصة 100%',t2:'مساعدة على مدار الساعة في الوجهة',t3:'معرفة محلية ولمسة شخصية',t4:'رحلات للأفراد والشركات',
+  pkTitle:'باقات السفر لدينا',pkSub:'تجارب متكاملة مصممة وفق اهتماماتك ووقتك وأسلوب سفرك.',pkAll:'اطلب جميع الباقات',
+  p_china:['جوهر الصين','الثقافة والتاريخ وأشهر الأماكن.'],p_nature:['الطبيعة والمغامرة','مناظر فريدة وتجارب في الهواء الطلق.'],
+  p_food:['فن الطهي والثقافة','نكهات أصيلة وأسواق محلية وتقاليد.'],p_premium:['تجارب مميزة','برامج وفعاليات حصرية ودخول إلى أماكن فريدة.'],
+  xEyebrow:'تجربة 360°',xTitle:'شامل وبلا عناء',xText:'نتولى كل تفاصيل رحلتك: التخطيط والحجوزات والنقل والإقامة والتذاكر والتجارب. عليك فقط أن تستمتع.',
+  i1:'رحلات طيران (اختياري)',i2:'إقامة فاخرة',i3:'نقل خاص',i4:'تجارب مصممة خصيصاً',i5:'مساعدة على مدار الساعة',
+  sTitle:'خدمات سفر خاصة',sText:'حلول سفر مرنة ومخصصة: توصيل وسائق خاص وبرامج رحلات مصممة حسب الطلب.',sCta:'اطلب عرضاً',
+  s1:'التوصيل والسائق الخاص',s2:'برامج رحلات مخصصة',s3:'سفر الشركات والفعاليات',
+  rEyebrow:'شركتنا الشقيقة',rTitle:'اكتشف شنغهاي مع REV8 Cars',rText:'رولز رويس وفيراري ولامبورغيني وغيرها. أضف سيارة فاخرة بسائق أو بدونه إلى أي رحلة من Echolocation.',rCta:'استكشف أسطول REV8',
+  cTitle:'هل أنت مستعد لاختبار الصين <em>كما لم تفعل من قبل</em>؟',cText:'أخبرنا بفكرتك وسنصمم لك رحلتك المثالية.',
+  about:'رحلات فاخرة مصممة خصيصاً في أنحاء الصين، يقدمها فريق محلي في شنغهاي.',fNav:'التنقل',fContact:'تواصل معنا',fCity:'شنغهاي، الصين',
+  mTitle:'خطّط لرحلتك',mSub:'أخبرنا بما تفكر فيه وسنرسل لك عرضاً.',mName:'الاسم الكامل',mEmail:'البريد الإلكتروني',mPhone:'الهاتف / WeChat / WhatsApp',
+  mInterest:'أنا مهتم بـ',mFrom:'تاريخ الوصول',mPeople:'عدد المسافرين',mMsg:'فكرتك (اختياري)',mSend:'إرسال الطلب',
+  mNote:'نموذج أولي: الإرسال تجريبي.',req:'يرجى إدخال الاسم والبريد الإلكتروني.',okTitle:'تم تجهيز الطلب',okText:'نموذج أولي: لم يُرسل أي شيء. عند الإطلاق سيصل الطلب إلى فريق Echolocation.',close:'إغلاق',
+  opt_general:'لست متأكداً بعد — انصحوني',opt_proposal:'خدمات خاصة / للشركات',opt_cars:'سيارة فاخرة من REV8'}
+};
+let lang; try{lang=localStorage.getItem('echo-lang')}catch(e){} if(!D[lang]) lang='en';
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+
+function renderPkgs(){
+  $('#pkgrid').innerHTML = PKGS.map(p=>{const [t,d]=D[lang]['p_'+p.id];return `<button class="pc" data-plan="${p.id}"><img src="${p.img}" alt="" loading="lazy"><div class="tx"><svg class="ic" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">${p.icon}</svg><h3>${t}</h3><p>${d}</p></div><span class="arrow">→</span></button>`}).join('');
+  bindPlan();
+}
+function renderInterest(sel){
+  const t=D[lang];
+  const opts=[['general',t.opt_general],...PKGS.map(p=>[p.id,t['p_'+p.id][0]]),['proposal',t.opt_proposal],['cars',t.opt_cars]];
+  $('#interest').innerHTML=opts.map(([v,l])=>`<option value="${v}">${l}</option>`).join('');
+  if(sel) $('#interest').value=sel;
+}
+function apply(){
+  document.documentElement.lang=lang; document.documentElement.dir=lang==='ar'?'rtl':'ltr'; $('#lname').textContent=({en:'English',zh:'中文',ru:'Русский',es:'Español',ar:'العربية'})[lang];
+  $$('[data-k]').forEach(el=>{const v=D[lang][el.dataset.k]??D.en[el.dataset.k]; if(typeof v==='string') el.innerHTML=v;});
+  $$('.lmenu button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===lang));
+  renderPkgs(); renderInterest($('#interest').value);
+  try{localStorage.setItem('echo-lang',lang)}catch(e){}
+}
+function openPlan(sel){
+  $('#formView').hidden=false; $('#okView').hidden=true; $('#err').textContent='';
+  renderInterest(sel||'general'); $('#mod').classList.add('open'); document.body.style.overflow='hidden';
+}
+function closePlan(){ $('#mod').classList.remove('open'); document.body.style.overflow=''; }
+function bindPlan(){ $$('[data-plan]').forEach(b=>{ b.onclick=e=>{ e.preventDefault(); $('.mnav').classList.remove('open'); openPlan(b.dataset.plan); }; }); }
+
+$('.lcur').onclick=e=>{e.stopPropagation();const o=$('.lmenu').classList.toggle('open');$('.lcur').classList.toggle('on',o);$('.lcur').setAttribute('aria-expanded',o);};
+$$('.lmenu button').forEach(b=>b.onclick=()=>{lang=b.dataset.l;apply();$('.lmenu').classList.remove('open');$('.lcur').classList.remove('on');});
+addEventListener('click',()=>{$('.lmenu').classList.remove('open');$('.lcur').classList.remove('on');});
+$('#cpwc').onclick=async()=>{try{await navigator.clipboard.writeText('+86 191 2118 9461')}catch(e){} $('#cpwc').textContent=D[lang].cCopied??D.en.cCopied; setTimeout(()=>$('#cpwc').textContent=D[lang].cCopy,1600);};
+$('.burger').onclick=()=>$('.mnav').classList.toggle('open');
+$$('.mnav a').forEach(a=>a.onclick=()=>$('.mnav').classList.remove('open'));
+$$('[data-close]').forEach(b=>b.onclick=closePlan);
+$('#mod').onclick=e=>{ if(e.target.id==='mod') closePlan(); };
+addEventListener('keydown',e=>{ if(e.key==='Escape') closePlan(); });
+$('#rev8link').href=REV8_URL;
+$('#planForm').onsubmit=e=>{
+  e.preventDefault(); const f=new FormData(e.target);
+  if(!String(f.get('name')).trim()||!String(f.get('email')).trim()){ $('#err').textContent=D[lang].req; return; }
+  $('#formView').hidden=true; $('#okView').hidden=false;
+};
+// highlight current section in nav
+const secs=['top','packages','experience','business','rev8','about'].map(id=>document.getElementById(id));
+addEventListener('scroll',()=>{ let cur='top'; secs.forEach(s=>{ if(s && s.getBoundingClientRect().top<120) cur=s.id; });
+  $$('nav.main a').forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+cur)); },{passive:true});
+apply();
+// hero slideshow
+(()=>{const sl=$$('.hero .s'),dots=$$('.hdots button');let i=0,t;
+ const show=n=>{i=n;sl.forEach((s,k)=>s.classList.toggle('on',k===i));dots.forEach((d,k)=>d.classList.toggle('on',k===i));};
+ const run=()=>{clearInterval(t);t=setInterval(()=>show((i+1)%sl.length),5500);};
+ dots.forEach((d,k)=>d.onclick=()=>{show(k);run();});run();})();
+</script>
+</body>
+</html>
