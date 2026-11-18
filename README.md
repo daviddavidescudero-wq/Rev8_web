@@ -22,7 +22,9 @@ Echolocation is plain HTML/CSS/JS: edit `sites/echolocation/index.html` directly
 
 ## Pending before launch
 - Replace the example email `hello@example.com` (`source/src/data.ts`, `CONTACT`; and in `sites/echolocation/index.html`).
-- Replace the hard-coded `claude.ai/artifact/...` links between the three sites with the real domains.
 - Replace sample reviews, review FAQ and the rental conditions / privacy placeholders.
 - Make the forms really send (currently simulated).
-- One real page per car for SEO (title, description, sitemap) instead of `#car/...` routes.
+- Domain: when it exists, set `SITE_BASE=https://yourdomain.com` and run `node build-seo.mjs` (regenerates per-car pages, sitemap.xml, canonical URLs).
+
+## SEO pages
+`node build-seo.mjs` (in `source/`) generates one static page per car (`sites/cars/<car-id>/`), `sitemap.xml` and `robots.txt`. Links between the three sites are relative (`../hotels/`, `../cars/`, `../echolocation/`).

@@ -7,8 +7,8 @@ import { AppCtx, Btn, Eyebrow, Modal, Note, Photo, Reveal, ServiceGlyph, tr, use
 
 type View = string; // 'home' | 'fleet' | 'about' | 'faq' | 'terms' | 'privacy' | 'car/<id>'
 const viewFromHash = (h: string): View => { const k = h.replace(/^#\/?/, ''); return k === '' || k === 'home' ? 'home' : k === 'partners' ? 'fleet' : k; };
-const HOTELS_URL = 'https://claude.ai/artifact/8DF3EgMfDze5UrRB1MsfNr';
-const ECHO_URL = 'https://claude.ai/artifact/JpHtQhZwoUHAHqveG4RCq9';
+const HOTELS_URL = '../hotels/';
+const ECHO_URL = '../echolocation/';
 const HERO = VEHICLES.find((v) => v.id === 'lamborghini-huracan-performante')!;
 type Mode = 'b2c' | 'b2b';
 
@@ -798,7 +798,7 @@ function Footer({ go }: { go: (v: View, a?: string) => void }) {
                 <p className="text-[13px] font-medium text-neutral-900">{tx(c.label, lang)}</p>
                 <ul className="mt-2 space-y-1.5 text-[12px] text-neutral-500">
                   {VEHICLES.filter((v) => v.category === c.id).map((v) => (
-                    <li key={v.id}><a href={`#car/${v.id}`} onClick={(e) => { e.preventDefault(); go(`car/${v.id}`); }} className="hover:text-black">{fullName(v, lang)}</a></li>
+                    <li key={v.id}><a href={`${v.id}/`} onClick={(e) => { e.preventDefault(); go(`car/${v.id}`); }} className="hover:text-black">{fullName(v, lang)}</a></li>
                   ))}
                 </ul>
               </div>

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://daviddavidescudero-wq.github.io/Rev8_web/sitemap.xml

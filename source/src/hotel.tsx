@@ -9,7 +9,7 @@ import { isRtl, CONTACT } from './data';
 
 
 /** Partner portal (full catalogue with show/hide commission). Will be login-protected later. */
-const PORTAL_URL = 'https://claude.ai/artifact/NMfgC51U35j2okTK6YrZDf#partners';
+const PORTAL_URL = '../cars/#partners';
 
 const T = {
   en: {
