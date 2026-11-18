@@ -320,22 +320,6 @@ function Home({ go, onOpen, onAsk, rates }: { go: (v: View, a?: string) => void;
         </Reveal>
       </section>
 
-      {/* Showreel */}
-      <section id="showreel" className="scroll-mt-24 border-t border-neutral-100">
-        <div className="mx-auto grid max-w-[1440px] items-center gap-10 px-5 py-20 md:grid-cols-2 md:gap-16 md:px-10 md:py-28">
-          <Reveal>
-            <Eyebrow>{SHOWREEL[lang].eyebrow}</Eyebrow>
-            <h2 className="mt-3 font-display text-4xl font-medium tracking-[-0.03em] md:text-5xl">{SHOWREEL[lang].title}</h2>
-            <p className="mt-5 max-w-md text-[17px] leading-relaxed text-neutral-600">{SHOWREEL[lang].text}</p>
-          </Reveal>
-          <Reveal delay={120} className="mx-auto w-full max-w-[340px]">
-            <video controls playsInline preload="none" poster="images/services/rev8-showreel-poster.webp" className="aspect-[9/16] w-full rounded-2xl bg-black object-cover shadow-xl">
-              <source src="images/services/rev8-showreel.mp4" type="video/mp4" />
-            </video>
-          </Reveal>
-        </div>
-      </section>
-
       {/* Experience */}
       <section id="experience" className="scroll-mt-24 border-t border-neutral-100">
         <div className="mx-auto grid max-w-[1440px] gap-12 px-5 py-24 md:grid-cols-12 md:px-10 md:py-32">
@@ -534,13 +518,6 @@ function VehicleCard({ v, onOpen, onAsk, rate }: { v: Vehicle; onOpen: (v: Vehic
   );
 }
 
-const SHOWREEL: Record<Lang, { eyebrow: string; title: string; text: string }> = {
-  en: { eyebrow: 'Showreel', title: 'See REV8 in action', text: 'Collect your car at the airport or your hotel, with our team by your side from the first minute.' },
-  es: { eyebrow: 'Vídeo', title: 'Mira REV8 en acción', text: 'Recoge tu coche en el aeropuerto o en tu hotel, con nuestro equipo a tu lado desde el primer minuto.' },
-  zh: { eyebrow: '视频', title: '看看 REV8 的服务', text: '在机场或酒店提车，从第一分钟起就有我们的团队陪伴。' },
-  ru: { eyebrow: 'Видео', title: 'REV8 в деле', text: 'Получите автомобиль в аэропорту или отеле — наша команда рядом с первой минуты.' },
-  ar: { eyebrow: 'فيديو', title: 'شاهد REV8 في العمل', text: 'استلم سيارتك في المطار أو الفندق، وفريقنا بجانبك منذ اللحظة الأولى.' },
-};
 const SPEC_L = {
   en: { seats: 'Seats', power: 'Power', hp: 'hp', z: '0–100 km/h', top: 'Top speed', engine: 'Engine' },
   es: { seats: 'Plazas', power: 'Potencia', hp: 'CV', z: '0–100 km/h', top: 'Vel. máx.', engine: 'Motor' },

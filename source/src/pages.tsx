@@ -174,6 +174,11 @@ export function FaqPage({ back, onAsk }: { back: () => void; onAsk: () => void }
           </div>
         ))}
       </div>
+      <div className="mx-auto mt-12 w-full max-w-[340px]">
+        <video controls playsInline preload="none" poster="images/services/rev8-showreel-poster.webp" className="aspect-[9/16] w-full rounded-2xl bg-black object-cover shadow-xl">
+          <source src="images/services/rev8-showreel.mp4" type="video/mp4" />
+        </video>
+      </div>
       <button onClick={onAsk} className="mt-10 rounded-full bg-neutral-950 px-6 py-3 text-[13px] font-medium text-white hover:bg-neutral-800">{x.contactTitle}</button>
     </Shell>
   );
